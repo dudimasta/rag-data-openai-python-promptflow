@@ -42,7 +42,7 @@ def get_chat_response(chat_input: str, chat_history: list = []) -> ChatResponse:
         intentPrompty = Prompty.load(path_to_prompty, model={
             'configuration': model_config,
             'parameters': { 
-                'max_tokens': 256,
+                'max_tokens': 8196,
             }
         })
         searchQuery = intentPrompty(query=chat_input, chat_history=chat_history)
@@ -55,7 +55,7 @@ def get_chat_response(chat_input: str, chat_history: list = []) -> ChatResponse:
     chatPrompty = Prompty.load(path_to_prompty, model={
         'configuration': model_config,
         'parameters': { 
-            'max_tokens': 256,
+            'max_tokens': 2048,
             'temperature': 0.2,
             'stream': True # always stream responses, consumers/clients should handle streamed response
         }

@@ -58,7 +58,7 @@ def deploy_flow(endpoint_name, deployment_name):
         # instance type comes with associated cost.
         # make sure you have quota for the specified instance type
         # See more details here: https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list
-        instance_type="Standard_DS3_v2",
+        instance_type="Standard_F2s_v2",
         instance_count=1,
         environment_variables={
             "PRT_CONFIG_OVERRIDE": f"deployment.subscription_id={client.subscription_id},deployment.resource_group={client.resource_group_name},deployment.workspace_name={client.workspace_name},deployment.endpoint_name={endpoint_name},deployment.deployment_name={deployment_name}",
